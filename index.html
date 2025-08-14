@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación XV Años</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+    <div class="container fade-in">
+        <img src="1.png" alt="error" class="fade-in">
+        <header>
+            <h4>mis     xv     años</h4>
+            <h1>FATIMA 
+                <p> DEL</p>
+                <p> CARMEN</p>
+            <!-- <p>CERVANTES GALLARDO</p>--> 
+             </h1>
+        </header>
+
+        <!-- Fecha -->
+        <div class="date-box">
+            <span class="day">31</span>
+            <div class="date-info">
+                <span class="month">OCTUBRE</span>
+                <span class="year">2025</span>
+            </div>
+        </div>
+
+       
+
+        <!-- Cuenta regresiva -->
+        <div class="countdown-box1">
+            <br>
+            <h3>Faltan</h3>
+            <div id="timer">
+                <div class="countdown-box2"><span id="days" class="count-animate"></span><small>Días  </small></div>
+                <div class="countdown-box2"><span id="hours" class="count-animate"></span> <small>Horas  </small></div>
+                <div class="countdown-box2"><span id="minutes" class="count-animate"></span><small>Min  </small></div>
+                <div class="countdown-box2"><span id="seconds"  class="count-animate"></span><small>Días  </small></div>
+            </div>
+        </div>
+<br><br>
+        <!-- Datos -->
+        <section class="info">
+            <div class="event">
+                <h3>MIS PADRES</h3>
+                <p>Mariana Gallardo Brito</p>
+                ____________
+                <p>Marcos Eloy Cervantes Pérez</p>
+<img src="2.png" alt="error" class="fade-in">
+                <h3>MIS PADRINOS</h3>
+                <p>Sandra Mata Jiménez</p>
+                ____________
+                <p>Carlos Cabrera Maldonado</p>
+            </div>
+        </section>
+        <!-- Eventos -->
+        <section class="events">
+            
+            <div class="event2">
+
+               <P>  TENEMOS EL HONOR DE INVITARTE A CELEBRAR ESTE DÍA ESPECIAL</P>
+               <br>
+               <img src="iglesia.png" alt="error" width="50" height="60">
+                <h4>Ceremonia Religiosa</h4>
+                Templo de Nuestra Señora de la Luz
+                <P>6:15 p.m.</P>
+                <P> <a class="boton" href="https://maps.app.goo.gl/BTF4Puv6utM7s69x8?g_st=iw" target="_blank" rel="noopener noreferrer">VER UBICACION</a></P>
+<br>
+                <img src="champan.png" alt="error" width="50" height="60">
+                <h4>Recepción</h4>
+                <P>Salón Arcadia</P>
+                <P>8:00 p.m.</P>
+                 <P><a class="boton" href="https://maps.app.goo.gl/tn27MBZqmDXzGSEm8?g_st=iw" target="_blank" rel="noopener noreferrer">VER UBICACION</a></P>
+
+
+            </div>
+        </section>
+
+        <!-- Vestimenta -->
+        <section class="dresscode">
+            <h1>Código de Vestimenta</h1>
+            <p>Formal</p>
+            <img src="vestido-de-novia.png" alt="error" width="100" height="80">
+        </section>
+
+           <div class="regalo">
+        <p>
+            <h1>SUGERENCIA DE REGALO</h1>
+         TU PRESENCIA ES LO MÁS IMPORTANTE , PERO SI DESEAS HACERME UN OBSEQUIO PUEDES VER MI MESA DE REGALOS  
+         </p>
+        <a class="boton" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/----" target="_blank">MESA DE REGALOS LIVERPOOL</a>
+<P><img src="2.png" alt="error" width="200" height="150"></P>
+      </div>
+      <h3 class="confirmar">CONFIRMAR TU ASISTENCIA</h3>
+      <a class="asistencia" href="https://wa.me/-------?text=Confirmo%20mi%20asistencia">¡Escríbenos!</a>
+    
+        <img src="3.png" alt="error" class="fade-in">
+
+    </div>
+
+    <!-- Script cuenta regresiva -->
+    <script>
+        const eventDate = new Date("Oct 31, 2025 18:15:00").getTime();
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            function formatTime(t) {
+                return t < 10 ? "0" + t : t;
+            }
+
+            const values = {
+                days: formatTime(Math.floor(distance / (1000 * 60 * 60 * 24))),
+                hours: formatTime(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))),
+                minutes: formatTime(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))),
+                seconds: formatTime(Math.floor((distance % (1000 * 60)) / 1000))
+            };
+
+            for (let id in values) {
+                const el = document.getElementById(id);
+                if (el.innerText !== values[id]) {
+                    el.innerText = values[id];
+                    el.classList.remove("count-animate");
+                    void el.offsetWidth; // reinicia la animación
+                    el.classList.add("count-animate");
+                }
+            }
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("timer").innerHTML = "¡Hoy es el gran día!";
+            }
+        }
+
+        const timer = setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+</body>
+</html>
