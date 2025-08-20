@@ -1,10 +1,14 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     font-family: "Merienda", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
     margin: 0;
     padding: 0;
     color: #2d5a4f;
     background: url('0.jpeg') no-repeat center center fixed;
     background-size: cover;
+    
 }
 /*estilo de letra*/
 h4{
@@ -15,7 +19,7 @@ h4{
 }
 
 h1 {
-   font-family: "Zain", sans-serif;
+   font-family: "Mogra", system-ui;
   font-weight: 400;
   font-style: normal;
   font-size: 2.5rem; /* Tamaño más grande */
@@ -196,4 +200,3 @@ img {
         width: 45px;
     }
 }
-
